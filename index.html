@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3 zadania </title>
+</head>
+<body>
+    <div>
+        <h1>Sprawdź czy piwko można</h1>
+        <form id="ageForm">
+            <label for="age">Podaj swój wiek:</label>
+            <input type="number" id="age" name="age" required>
+            <button type="submit">Sprawdź</button>
+        </form>
+        <div id="result"></div>
+    </div>
+    <script>
+        document.getElementById('ageForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const age = document.getElementById('age').value;
+            const resultDiv = document.getElementById('result');
+            
+            if (age >= 18) {
+                resultDiv.innerHTML = 'Jesteś pełnoletni i piwko można';
+            } else {
+                resultDiv.innerHTML = 'Jesteś niepełnoletni i piwko nie można';
+            }
+        });
+    </script>
+    <div>
+        <h2>Liczba jest parzysta czy nieparzysta ?</h2>
+        <form id="numberForm">
+            <label for="number">Podaj liczbę:</label>
+            <input type="number" id="number" name="number" required>
+            <button type="submit">Sprawdź</button>
+        </form>
+        <div id="result2"></div>
+    </div>
+    <script>
+        document.getElementById('numberForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const number = document.getElementById('number').value;
+            const resultDiv = document.getElementById('result2');
+            
+            if (number % 2 === 0) {
+                resultDiv.innerHTML = 'parzysta';
+            } else {
+                resultDiv.innerHTML = 'nieparzysta';
+            }
+        });
+    </script>
+    <div>
+        <h1>Sprawdź długość hasła</h1>
+        <form id="passwordForm">
+            <label for="password">Podaj hasło:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Sprawdź</button>
+        </form>
+        <div id="result3"></div>
+    </div>
+    <script>
+        document.getElementById('passwordForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const password = document.getElementById('password').value;
+            const resultDiv = document.getElementById('result3');
+            
+            if (password.length >= 8) {
+                resultDiv.innerHTML = 'Hasło ma wystarczającą długość';
+            } else {
+                resultDiv.innerHTML = 'Hasło jest za krótkie :(';
+            }
+        });
+    </script>
+</body>
+</html>
